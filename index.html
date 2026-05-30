@@ -7,8 +7,8 @@
     <title>Seguros Micoopes | Protección para Empresas y Familias</title>
     <style>
         :root {
-            --primary-color: #0056b3;
-            --secondary-color: #0080ff;
+            --primary-color: #0d47a1;
+            --secondary-color: #1976d2;
             --text-color: #333;
             --bg-light: #f4f7f6;
             --white: #ffffff;
@@ -19,6 +19,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -27,170 +28,294 @@
             background-color: var(--bg-light);
         }
 
+        /* Navbar & Logo */
         header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1.5rem 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .hero {
             background-color: var(--white);
-            padding: 3rem;
-            border-radius: 8px;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo-container svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--primary-color);
+        }
+
+        .logo-container h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section with Background Image */
+        .hero {
+            background: linear-gradient(rgba(13, 71, 161, 0.8), rgba(25, 118, 210, 0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: var(--white);
+            padding: 6rem 5%;
             text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         .hero h2 {
-            color: var(--primary-color);
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+
+        /* Services with Images */
         .services {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
         .service-card {
             background-color: var(--white);
-            flex: 1;
-            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Info & Privacy */
+        .section-title {
             text-align: center;
-            border-top: 4px solid var(--secondary-color);
-        }
-
-        .service-card h3 {
             color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .info-section {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            font-size: 2rem;
         }
 
-        .info-section h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--bg-light);
-            padding-bottom: 0.5rem;
-        }
-
-        .contact-grid {
+        .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 2rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
         }
 
-        .contact-item {
+        .privacy-box {
+            background-color: #e3f2fd;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 3rem 5% 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links h4 {
+            color: var(--secondary-color);
             margin-bottom: 1rem;
         }
 
-        .contact-item strong {
-            display: block;
-            color: var(--primary-color);
+        .footer-links ul {
+            list-style: none;
         }
 
-        footer {
-            background-color: #222;
+        .footer-links a {
             color: #ddd;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
         }
 
         .legal-info {
-            margin-top: 1rem;
-            font-size: 0.8rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.85rem;
             color: #aaa;
-            border-top: 1px solid #444;
-            padding-top: 1rem;
+        }
+
+        .legal-info strong {
+            color: #ddd;
         }
 
         @media (max-width: 768px) {
-            .services, .contact-grid {
-                flex-direction: column;
+            .services, .info-grid {
                 grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; /* Simplification for mobile view */
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Seguros Micoopes</h1>
-        <p>Tranquilidad y respaldo para su futuro</p>
+    <header id="inicio">
+        <a href="#" class="logo-container">
+            <!-- SVG Logo - Shield -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 19.93V3.19l7 3.11v4.7c0 4.67-3.13 8.98-7 10.03z"/>
+                <path d="M12 10.99h5c-.38 2.57-2.07 4.79-4.8 5.76v-5.76H7V7h5v3.99z"/>
+            </svg>
+            <h1>Seguros Micoopes</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#politicas">Políticas</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        <section class="hero">
-            <h2>Protegiendo lo que más importa desde 2020</h2>
-            <p>Somos una empresa dedicada a brindar soluciones de seguros integrales y transparentes en toda Guatemala. Nuestro compromiso es garantizar la estabilidad y el patrimonio de nuestros clientes mediante planes adaptables y un servicio al cliente excepcional.</p>
-        </section>
+    <section class="hero">
+        <h2>Protegiendo lo que más importa desde 2020</h2>
+        <p>Soluciones de seguros integrales, transparentes y confiables para garantizar la estabilidad de su familia y el crecimiento de su empresa en Guatemala.</p>
+    </section>
 
+    <div class="container">
+        
+        <h2 id="nosotros" class="section-title">Nuestros Servicios</h2>
         <section class="services">
             <div class="service-card">
-                <h3>Seguros para Empresas</h3>
-                <p>Proteja los activos, las operaciones y el capital humano de su compañía con pólizas diseñadas para la continuidad y el crecimiento seguro de su negocio.</p>
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=80" alt="Seguros para Empresas" class="service-img">
+                <div class="service-content">
+                    <h3>Seguros para Empresas</h3>
+                    <p>Proteja los activos, las operaciones y el capital humano de su compañía con pólizas diseñadas para la continuidad y el crecimiento seguro de su negocio. Operamos con total transparencia para resguardar su patrimonio corporativo.</p>
+                </div>
             </div>
             <div class="service-card">
-                <h3>Seguros Familiares</h3>
-                <p>Cobertura integral para la salud, vida y patrimonio familiar. Cuidamos de sus seres queridos para que usted pueda vivir con total tranquilidad.</p>
+                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1000&q=80" alt="Seguros Familiares" class="service-img">
+                <div class="service-content">
+                    <h3>Seguros Familiares</h3>
+                    <p>Cobertura integral para la salud, vida y patrimonio familiar. Cuidamos de sus seres queridos para que usted pueda vivir con total tranquilidad, respaldado por una institución sólida.</p>
+                </div>
             </div>
         </section>
 
-        <section class="info-section">
-            <h3>Información de Contacto y Operaciones</h3>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <strong>Ubicación:</strong>
-                    <p>Guatemala (Atención y entregas a coordinar de manera remota y presencial).</p>
-                </div>
-                <div class="contact-item">
-                    <strong>Correo Electrónico:</strong>
-                    <p>info@micoope-seguros.vercel.app</p>
-                </div>
-                <div class="contact-item">
-                    <strong>Teléfono de Contacto:</strong>
-                    <p>+502 2234-5678</p>
-                </div>
-                <div class="contact-item">
-                    <strong>Horario de Atención:</strong>
-                    <p>Lunes a Viernes: 8:00 AM - 5:00 PM<br>Sábados y Domingos: Cerrado</p>
-                </div>
+        <h2 id="contacto" class="section-title">Atención y Operaciones</h2>
+        <section class="info-grid">
+            <div>
+                <strong>Ubicación y Cobertura:</strong>
+                <p>Guatemala (Atención presencial y entregas a coordinar con nuestros asesores).</p>
+                <br>
+                <strong>Horario de Atención:</strong>
+                <p>Lunes a Viernes: 8:00 AM - 5:00 PM<br>Sábados y Domingos: Cerrado</p>
+            </div>
+            <div>
+                <strong>Correo Electrónico:</strong>
+                <p>info@micoope-seguros.vercel.app</p>
+                <br>
+                <strong>Teléfono de Contacto:</strong>
+                <p>+502 2234-5678</p>
             </div>
         </section>
+
+        <h2 id="politicas" class="section-title">Transparencia y Privacidad</h2>
+        <section class="privacy-box">
+            <h3>Políticas de Privacidad y Términos de Uso</h3>
+            <p>En <strong>Seguros Micoopes</strong>, valoramos su privacidad y la seguridad de sus datos. La información recopilada a través de nuestros canales de contacto se utiliza exclusivamente para fines de cotización y prestación de servicios de seguros. No compartimos, vendemos ni distribuimos información personal a terceros sin su consentimiento explícito.</p>
+            <br>
+            <p>Operamos bajo estrictos estándares de cumplimiento y transparencia comercial. Este sitio web utiliza protocolos seguros para garantizar que su navegación sea confiable. Al contactarnos, usted acepta nuestros términos de gestión de datos estipulados en las leyes de protección vigentes.</p>
+        </section>
+
     </div>
 
     <footer>
-        <p>&copy; 2026 Seguros Micoopes. Todos los derechos reservados.</p>
+        <div class="footer-grid">
+            <div class="footer-links">
+                <h4>Seguros Micoopes</h4>
+                <p>Respaldando su futuro desde el 2020 con soluciones reales y transparentes.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#politicas">Políticas de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        
         <div class="legal-info">
-            <p><strong>Información del Anunciante Verificado:</strong></p>
+            <p>&copy; 2026 Seguros Micoopes. Todos los derechos reservados.</p>
+            <br>
+            <p><strong>Información de Transparencia Comercial / Anunciante Verificado:</strong></p>
             <p>51.827.011 LEANDRO QUEIROZ DE JESUS</p>
             <p>CNPJ: 51.827.011/0001-80</p>
         </div>
