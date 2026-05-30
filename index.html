@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Seguros Micoopes - Empresa de seguros para empresas y familias en Guatemala. Operando desde 2020.">
+    <title>Seguros Micoopes | Protección para Empresas y Familias</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #0080ff;
+            --text-color: #333;
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .hero h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .services {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            flex: 1;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-section {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .info-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1rem;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--primary-color);
+        }
+
+        footer {
+            background-color: #222;
+            color: #ddd;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .legal-info {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #aaa;
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .services, .contact-grid {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Seguros Micoopes</h1>
+        <p>Tranquilidad y respaldo para su futuro</p>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h2>Protegiendo lo que más importa desde 2020</h2>
+            <p>Somos una empresa dedicada a brindar soluciones de seguros integrales y transparentes en toda Guatemala. Nuestro compromiso es garantizar la estabilidad y el patrimonio de nuestros clientes mediante planes adaptables y un servicio al cliente excepcional.</p>
+        </section>
+
+        <section class="services">
+            <div class="service-card">
+                <h3>Seguros para Empresas</h3>
+                <p>Proteja los activos, las operaciones y el capital humano de su compañía con pólizas diseñadas para la continuidad y el crecimiento seguro de su negocio.</p>
+            </div>
+            <div class="service-card">
+                <h3>Seguros Familiares</h3>
+                <p>Cobertura integral para la salud, vida y patrimonio familiar. Cuidamos de sus seres queridos para que usted pueda vivir con total tranquilidad.</p>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h3>Información de Contacto y Operaciones</h3>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <strong>Ubicación:</strong>
+                    <p>Guatemala (Atención y entregas a coordinar de manera remota y presencial).</p>
+                </div>
+                <div class="contact-item">
+                    <strong>Correo Electrónico:</strong>
+                    <p>info@micoope-seguros.vercel.app</p>
+                </div>
+                <div class="contact-item">
+                    <strong>Teléfono de Contacto:</strong>
+                    <p>+502 2234-5678</p>
+                </div>
+                <div class="contact-item">
+                    <strong>Horario de Atención:</strong>
+                    <p>Lunes a Viernes: 8:00 AM - 5:00 PM<br>Sábados y Domingos: Cerrado</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Seguros Micoopes. Todos los derechos reservados.</p>
+        <div class="legal-info">
+            <p><strong>Información del Anunciante Verificado:</strong></p>
+            <p>51.827.011 LEANDRO QUEIROZ DE JESUS</p>
+            <p>CNPJ: 51.827.011/0001-80</p>
+        </div>
+    </footer>
+
+</body>
+</html>
